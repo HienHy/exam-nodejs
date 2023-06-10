@@ -36,7 +36,7 @@
 // app.get("/", (req, res) => {
 //
 //
-//     const Product = require("./src/models/product");
+//     const Product = require("./src/models/user");
 //
 //     Product.find({})
 //         .then(rs => {
@@ -56,7 +56,7 @@
 //
 //
 //
-// const productRouter = require("./src/routes/product.route")
+// const productRouter = require("./src/routes/user.route")
 //
 // app.use("/products",productRouter)
 //
@@ -91,7 +91,7 @@ app.use(
     session({
     resave:true,
     saveUninitialized:true,
-    secret:"t2204m",
+    secret:"exam_nodejs",
         cookie:{
 
         maxAge:3600000 , // miliseconds
@@ -102,11 +102,11 @@ app.use(
 
 
 app.get("/",function(req,res){
-    const Product = require("./src/models/product");
-    Product.find({})
+    const User = require("./src/models/user");
+    User.find({})
         .then(rs=>{
             res.render("home",{
-                products: rs
+                users: rs
             })
         })
         .catch(err=>{
@@ -116,18 +116,10 @@ app.get("/",function(req,res){
 })
 
 // CRUD products
-const productRoutes = require("./src/routes/product.route");
-app.use("/products",productRoutes);
-
-const categoryRoutes = require("./src/routes/category.route");
-app.use("/categories",categoryRoutes);
-
-
-const brandRoutes = require("./src/routes/brand.route");
-app.use("/brands",brandRoutes);
+const userRoutes = require("./src/routes/user.route");
+app.use("/users",userRoutes);
 
 
 
-const authRoutes = require("./src/routes/auth.route");
-app.use("/auth",authRoutes);
+
 

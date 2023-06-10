@@ -1,27 +1,42 @@
 const mongoose = require("mongoose")
 const user = new mongoose.Schema({
 
-    name: {
+    firstName: {
         type: String,
         require: true,
         minLength: [6, "minLength 6"],
         maxLength: 100,
 
     },
-    email: {
+    lastName: {
         type: String,
         require: true,
         minLength: [6, "minLength 6"],
         maxLength: 100,
-        unique: true,
+
+    },
+    mobileNumber:{
+        type: String,
+        require: true,
+        minLength: [6, "minLength 6"],
+        maxLength: 100,
         validate: {
-            validator: (v) => {
-                const emailRegex = /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
-                return v.match(emailRegex);
+            validator: (value) => {
+                const regExp = /^(\([0-9]{3}\) |[0-9]{3})[0-9]{3}[0-9]{4}/;
+                return value.match(regExp);
             },
-            message: (e) => `${e.value} not email`
+            message: (text) =>` ${text.value} không phải số điện thoại`
         }
     },
+    userName:{
+        type: String,
+        require: true,
+        minLength: [6, "minLength 6"],
+        maxLength: 100,
+        unique:[true,"existed"]
+    },
+
+
     password:{
         type:String,
         require: true,

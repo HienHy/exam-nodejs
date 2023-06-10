@@ -1,18 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <%- include("head.ejs") %>
+    <%- include ("../head.ejs") %>
 </head>
 <body>
-<%- include("nav.ejs") %>
+<%-include ("../nav.ejs") %>
+
 <section>
     <div class="container">
-        <h1>Home page</h1>
-        <a href="/" class="btn btn-outline-primary">Home</a>
-        <a href="/users/" class="btn btn-outline-primary">List User</a>
-        <a href="/users/create" class="btn btn-outline-primary">Add User</a>
-        <h2>List User:</h2>
-        <table class="table table-bordered">
+        <h2>List User : </h2>
+        <table class="table table-bordered ">
             <thead>
             <th scope="col">#</th>
             <th scope="col">First Name</th>
@@ -35,6 +32,8 @@
             </tbody>
         </table>
     </div>
+
 </section>
+
 </body>
 </html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <%- include ("../head.ejs") %>
+</head>
+<body>
+<%- include ("../nav.ejs") %>
+<div class="container">
+    <form action="/users/create/add" method="post" >
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">First Name</label>
+            <input name="firstName" type="text" class="form-control" id="exampleFormControlInput1" placeholder="First Name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Last Name</label>
+            <input name="lastName" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Last Name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Mobile Number</label>
+            <input name="mobileNumber" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Mobile Number">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">User Name</label>
+            <input name="userName" type="text" class="form-control" id="exampleFormControlInput1" placeholder="User Name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Password</label>
+            <input name="password" type="password" class="form-control" id="exampleFormControlInput1">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+</div>
+</body>
+</html>
+
+
+
+
+
