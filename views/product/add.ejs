@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <%- include ("../head.ejs") %>
+</head>
+<body>
+<%- include ("../nav.ejs") %>
+<div class="container">
+    <form action="/products/create" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input name="name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Price</label>
+            <input name="price" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Price">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Qty</label>
+            <input name="qty" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Qty">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Brand</label>
+            <input name="brand" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Brand">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Thumbnail</label>
+            <input name="thumbnail" type="file" class="form-control" id="exampleFormControlInput1">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>
+
+
+
+
+

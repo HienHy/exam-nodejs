@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("head.ejs") %>
+</head>
+<body>
+<%- include("nav.ejs") %>
+<section>
+    <div class="container">
+        <h1>Home page</h1>
+        <a href="/categories/" class="btn btn-outline-primary">List Category</a>
+        <a href="/brands/" class="btn btn-outline-primary">List Brand</a>
+        <a href="/products/create" class="btn btn-outline-primary">Add product</a>
+        <h2>Danh sách sản phẩm:</h2>
+        <table class="table table-bordered">
+            <thead>
+            <th scope="col"></th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Thumbnail</th>
+            <th scope="col">Action</th>
+            </thead>
+            <tbody>
+            <% products.forEach(e=>{ %>
+                <tr>
+                    <td><%= e._id %></td>
+                    <td><%= e.name %></td>
+                    <td><%= e.price %></td>
+                    <td><%= e.qty %></td>
+                    <td><img width="80px" src="data:image/<%=e.thumbnail.contentType %>;base64,
+                    <%= e.thumbnail.data %>"
+                        />
+
+                    </td>
+                    <td>
+                        <a href="/update?slug=<%= e.slug %>" class="btn btn-outline-primary">Edit</a>
+                        <a href="#" class="btn btn-outline-danger">Delete</a>
+                        <a href="#" class="btn btn-outline-success">Add to cart</a>
+                    </td>
+                </tr>
+            <% }) %>
+            </tbody>
+        </table>
+    </div>
+</section>
+</body>
+</html>

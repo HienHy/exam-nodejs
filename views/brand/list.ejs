@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <%- include ("../head.ejs") %>
+</head>
+<body>
+<%-include ("../nav.ejs") %>
+
+<section>
+    <div class="container">
+        <h2>List Brand : </h2>
+        <a href="/brands/create" class="btn btn-outline-primary">Add Brand</a>
+        <table class="table table-bordered  mt-5 ">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Icon</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <% brands.forEach(e=> { %>
+                <tr>
+                    <th scope="row"> <%= e.id %>  </th>
+                    <td><%= e.name %></td>
+                    <td><img width="80px" src="data:image/<%=e.icon.contentType %>;base64,
+                    <%= e.icon.data %>"
+                        />
+
+                    </td>
+                    <td>
+                        <a href=""  class="btn btn-outline-primary" href="">Edit</a>
+                        <a href="" class="btn btn-danger" href="">Delete</a>
+                    </td>
+                </tr>
+            <% }) %>
+
+
+            </tbody>
+        </table>
+
+    </div>
+
+</section>
+
+</body>
+</html>
