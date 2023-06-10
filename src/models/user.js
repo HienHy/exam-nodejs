@@ -20,6 +20,8 @@ const user = new mongoose.Schema({
         require: true,
         minLength: [6, "minLength 6"],
         maxLength: 100,
+        unique:[true,"existed"],
+
         validate: {
             validator: (value) => {
                 const regExp = /^(\([0-9]{3}\) |[0-9]{3})[0-9]{3}[0-9]{4}/;
